@@ -23,11 +23,7 @@ SpotX-Patcher is a lightweight Python + Flet app that wraps official SpotX scrip
 
 ## Screenshot
 
-Add your screenshot here:
-
-```md
-![SpotX-Patcher UI](assets/screenshot.png)
-```
+![SpotX-Patcher UI](assets/preview1.png)
 
 ## Requirements
 
