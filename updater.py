@@ -125,19 +125,19 @@ def main(page: ft.Page) -> None:
 		content="Install SpotX",
 		icon=ft.Icons.DOWNLOAD,
 		bgcolor=ft.Colors.GREEN_700,
-		color=ft.Colors.WHITE,
+		color=ft.Colors.GREEN_100,
 	)
 	update_button = ft.Button(
 		content="Update Spotify",
 		icon=ft.Icons.SYSTEM_UPDATE_ALT,
 		bgcolor=ft.Colors.BLUE_700,
-		color=ft.Colors.WHITE,
+		color=ft.Colors.BLUE_100,
 	)
 	uninstall_button = ft.Button(
 		content="Uninstall SpotX",
 		icon=ft.Icons.DELETE_OUTLINE,
 		bgcolor=ft.Colors.RED_700,
-		color=ft.Colors.WHITE,
+		color=ft.Colors.RED_100,
 	)
 
 	buttons = [install_button, update_button, uninstall_button]

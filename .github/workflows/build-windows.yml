@@ -1,0 +1,46 @@
+name: Build Windows
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install flet pillow
+
+      - name: Convert icon to ICO
+        run: |
+          python -c "
+          from PIL import Image
+          img = Image.open('assets/icnsFile_e23cd8f38be7d393fc748fcb03cfb973_Spotify.png')
+          img.save('assets/icon.ico', sizes=[(256, 256)])
+          "
+
+      - name: Build with flet pack
+        run: |
+          flet pack updater.py ^
+            --name "SpotX Patcher" ^
+            --icon assets/icon.ico ^
+            --product-name "SpotX Patcher" ^
+            --file-description "One-click SpotX installer" ^
+            --product-version "1.0.0" ^
+            --company-name "SpotX Patcher" ^
+            --copyright "SpotX Patcher" ^
+            --distpath dist
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: SpotX-Patcher-Windows
+          path: dist/
