@@ -18,7 +18,7 @@ import flet as ft
 SPOTX_SCRIPT_URL = "https://raw.githubusercontent.com/SpotX-Official/SpotX-Bash/main/spotx.sh"
 ANSI_ESCAPE_RE = re.compile(r"\x1b\[[0-9;?]*[ -/]*[@-~]")
 ASSETS_DIR = Path(__file__).resolve().parent / "assets"
-SPOTIFY_ICON = "main.png"
+SPOTIFY_ICON = "icnsFile_e23cd8f38be7d393fc748fcb03cfb973_Spotify.png"
 IS_WINDOWS = sys.platform.startswith("win")
 WINDOWS_SPOTX_PS = (
 	"$ErrorActionPreference='Stop'; "
